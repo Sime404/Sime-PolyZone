@@ -1,0 +1,38 @@
+RegisterNetEvent("lowsime:creaCerchioZona")
+RegisterNetEvent("lowsime:creaPolyZona")
+RegisterNetEvent("lowsime:creaBoxZona")
+
+local createdZones = {}
+
+---@param nome string Il nome della zona
+---@param centro vector3 Il centro della zona
+---@param raggio number Il raggio della zona
+---@param opzioni table Le opzioni per la zona
+AddEventHandler("lowsime:creaCerchioZona", function(nome, centro, raggio, opzioni)
+    if not createdZones[nome] then
+        createdZones[nome] = true
+        TriggerClientEvent("lowsime:creaCerchioZona", -1, nome, centro, raggio, opzioni)
+    end
+end)
+
+---@param nome string Il nome della zona
+---@param vettori table Le coordinate della zona
+---@param opzioni table Le opzioni per la zona
+AddEventHandler("lowsime:creaPolyZona", function(nome, vettori, opzioni)
+    if not createdZones[nome] then
+        createdZones[nome] = true
+        TriggerClientEvent("lowsime:creaPolyZona", -1, nome, vettori, opzioni)
+    end
+end)
+
+---@param nome string Il nome della zona
+---@param centro vector3 Il centro della zona
+---@param lunghezza number La lunghezza della zona
+---@param larghezza number La larghezza della zona
+---@param opzioni table Le opzioni per la zona
+AddEventHandler("lowsime:creaBoxZona", function(nome, centro, lunghezza, larghezza, opzioni)
+    if not createdZones[nome] then
+        createdZones[nome] = true
+        TriggerClientEvent("lowsime:creaBoxZona", -1, nome, centro, lunghezza, larghezza, opzioni)
+    end
+end)
