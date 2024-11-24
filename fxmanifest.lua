@@ -12,15 +12,15 @@ client_scripts {
     '@PolyZone/CircleZone.lua',
     '@PolyZone/ComboZone.lua',
     '@PolyZone/EntityZone.lua',
-    'client/main.lua'
+    'main.lua'
 }
 
 shared_scripts {
-    'shared/config.lua'
+    'config.lua'
 }
 
 server_scripts {
-    'server/event.lua'
+    'event.lua'
 }
 
 dependencies {
